@@ -26,7 +26,7 @@ class users_controller extends base_controller {
 
         DB::instance(DB_NAME)->insert_row('users', $_POST);
 
-        Router::redirect('/users/login');
+        Router::redirect('/users/profile');
     }
 
     public function login() {
@@ -51,7 +51,7 @@ class users_controller extends base_controller {
         # Success
         if($token) {
             setcookie('token',$token,strtotime('+1 year'),'/');
-            echo "You are logged in!";
+            Router::redirect('/users/profile');
         }
         # Fail
         else {
@@ -60,17 +60,33 @@ class users_controller extends base_controller {
     }
 
     public function logout() {
-        echo "This is the logout page";
+        $new_token = sha1(TOKEN_SALT.$this->user->email.Utils::generate_random_string());
+        
+        $data = Array('token' => $new_token);
+        
+        DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id ='. $this->user->user_id);
+        
+        setcookie('token', '', strtotime('-1 year'), '/');
+        
+        Router::redirect('/');
     }
 
-    public function profile($user_name = NULL) {
+    public function profile() {
 
-        if($user_name == NULL) {
-            echo "No user specified";
+    # If user is blank, they're not logged in; redirect them to the login page
+        if(!$this->user) {
+            Router::redirect('/');
         }
-        else {
-            echo "This is the profile for ".$user_name;
-        }
+
+    # If they weren't redirected away, continue:
+
+    # Setup view
+        $this->template->content = View::instance('v_users_profile');
+        $this->template->title   = "Profile of".$this->user->first_name;
+
+    # Render template
+        echo $this->template;
+        
     }
 
 } # end of the class
