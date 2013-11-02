@@ -1,0 +1,12 @@
+/*CSS for users*/
+
+h2	{
+	text-align: center;
+}
+
+#users {
+	color: black;
+	font-size: 1.5em;
+	margin-left: 75px;
+}
+

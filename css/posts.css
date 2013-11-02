@@ -1,0 +1,22 @@
+/* CSS for posts*/
+
+
+article	{
+	background-color: #FFFF99;
+	border-radius: 10px;
+	margin-left: 80px;
+	margin-right: 80px;
+	box-shadow: 10px 10px 5px #FFCC66;
+}
+
+h1, p	{
+	margin-left: 30px;
+}
+
+time	{
+	margin-left: 725px;
+}
+
+h2	{
+	text-align: center;
+}

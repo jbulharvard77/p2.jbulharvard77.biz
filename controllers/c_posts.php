@@ -35,8 +35,8 @@ class posts_controller extends base_controller {
         # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
         DB::instance(DB_NAME)->insert('posts', $_POST);
 
-        # Quick and dirty feedback
-        echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+        # Route to posts
+        Router::redirect('/posts/');
 
     }
 
@@ -45,6 +45,9 @@ class posts_controller extends base_controller {
     # Set up the View
     $this->template->content = View::instance('v_posts_index');
     $this->template->title   = "Posts";
+
+    #CSS
+    $this->template->client_files_head = '<link rel="stylesheet" href="/css/posts.css" type="text/css">';
 
     # Build the query
     $q = 'SELECT 
@@ -77,6 +80,10 @@ class posts_controller extends base_controller {
     # Set up the View
     $this->template->content = View::instance("v_posts_users");
     $this->template->title   = "Users";
+
+    # CSS
+
+    $this->template->client_files_head = '<link rel="stylesheet" href="/css/users.css" type="text/css">';
 
     # Build the query to get all the users
     $q = "SELECT *

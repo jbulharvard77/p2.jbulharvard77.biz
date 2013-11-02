@@ -1,7 +1,10 @@
+<h2>Posts You're Following</h2>
+
 <?php foreach($posts as $post): ?>
 
-<article>
 
+<article>
+	
     <h1><?=$post['first_name']?> <?=$post['last_name']?> posted:</h1>
 
     <p><?=$post['content']?></p>
@@ -11,5 +14,6 @@
     </time>
 
 </article>
+
 
 <?php endforeach; ?>

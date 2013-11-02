@@ -1,9 +1,41 @@
+/* CSS global */
+
 body {
-	background-color: gray;
+	background-color: #CC6633;
 }
 
 #box {
 	border-color: #black;
 	border-width: 4px;
 	border-style: solid;
+}
+
+#navigation ul {list-style: none; padding: 0;}
+#navigation ul li a {
+	float: right;
+	text-decoration: none; 
+	padding: .3em .3em .5em .5em; 
+	font-size: 1.1em;
+	color: black;
+}
+
+#olduser	{
+	text-align: center;
+	font-size: 2em;
+}	
+
+textarea	{
+	width: 300px;
+	height: 100px;
+	margin-top: 25px;
+	border-radius: 5px;
+}
+
+#olduser2	{
+	text-align: center;
+	font-size: 1.5em;
+	margin: 50px 170px 50px 170px;
+	background-color: #FFFF99;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #FFCC66;
 }
