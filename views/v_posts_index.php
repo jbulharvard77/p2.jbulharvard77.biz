@@ -14,6 +14,10 @@
     </time>
 
 </article>
+<br>
 
+	<a href ="/posts/p_delete/post_id"> Delete Post</a>
 
 <?php endforeach; ?>
+
+

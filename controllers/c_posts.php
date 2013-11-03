@@ -53,6 +53,7 @@ class posts_controller extends base_controller {
     $q = 'SELECT 
         posts.content,
         posts.created,
+        posts.post_id,
         posts.user_id AS post_user_id,
         users_users.user_id AS follower_id,
         users.first_name,
@@ -74,6 +75,48 @@ class posts_controller extends base_controller {
     echo $this->template;
 
     }
+
+    public function p_delete()  {
+
+    # Setup view
+    $this->template->content = View::instance('v_posts_delete');
+    $this->template->title = "Delete";
+
+    $q = 'SELECT 
+        posts.content,
+        posts.created,
+        posts.post_id,
+        posts.user_id AS post_user_id,
+        users_users.user_id AS follower_id,
+        users.first_name,
+        users.last_name
+    FROM posts
+    INNER JOIN users_users 
+        ON posts.user_id = users_users.user_id_followed
+    INNER JOIN users 
+        ON posts.user_id = users.user_id
+    WHERE users_users.user_id = '.$this->user->user_id;
+
+
+    $posts= DB::instance(DB_NAME)->select_rows($q);
+
+    $this->template->content->posts = $posts;
+
+
+    # Render template
+    echo $this->template;
+
+    }
+
+    public function delete($posts, $where_condition) {
+
+        $where_condition = 'WHERE post_id='.$post_id;
+        $sql = 'DELETE FROM '.$posts.' '.$where_condition;
+
+        DB::instance(DB_NAME)->delete('posts', $where_condition);
+    
+    }
+
 
     public function users() {
 
