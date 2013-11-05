@@ -75,6 +75,27 @@ class posts_controller extends base_controller {
     echo $this->template;
 
     }
+    
+    public function p_delete()  {
+
+    # Setup view
+    $this->template->content = View::instance('v_posts_delete');
+    $this->template->title = "Delete";
+
+    $q = 'SELECT 
+        posts.post_id,
+        FROM posts
+        WHERE post_id ='.$this->post->post_id;
+    
+    $posts= DB::instance(DB_NAME)->select_rows($q);
+
+    $this->template->content->posts = $posts;
+
+
+    # Render template
+    echo $this->template;
+
+    }
 
 
     public function delete($posts, $where_condition) {
