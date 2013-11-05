@@ -76,7 +76,7 @@ class posts_controller extends base_controller {
 
     }
 
-    public function posts_delete()  {
+    public function p_delete()  {
 
     # Setup view
     $this->template->content = View::instance('v_posts_delete');
