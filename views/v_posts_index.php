@@ -16,7 +16,11 @@
 </article>
 <br>
 
-	<a href ="/posts/p_delete/post_id"> Delete Post</a>
+	<form action="/posts/p_delete/post_id">
+	<input type="hidden" name="post_id" value="<?$post['post_id']?>">
+	<input type="submit" value="delete">
+
+	</form>
 
 <?php endforeach; ?>
 
