@@ -3,3 +3,5 @@
 	<input type="submit" name="delete" value="delete"/>
 </form>
 
+
+print_r($posts)
