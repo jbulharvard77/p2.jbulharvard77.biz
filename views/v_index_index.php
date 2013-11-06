@@ -1,4 +1,3 @@
-
 <?php if($user): ?>
 <div id= "olduser">
 	Hello <?=$user->first_name;?>!  Welcome back...<br>
@@ -29,9 +28,6 @@
 
 	</form><br>
 
-</div>
-
-<div id = "olduser2">
 	If you are new to the blog please create a profile.<br>
 	<a href="/users/signup">Sign Up</a>
 </div>
