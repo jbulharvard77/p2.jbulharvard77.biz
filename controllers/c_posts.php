@@ -70,7 +70,7 @@ class posts_controller extends base_controller {
     
     # Run delete posts query
     $where_condition = 'WHERE post_id='.$post_id;
-    $post_id = DB::instance(DB_NAME)->delete('posts', $where_condition)
+    $post_id = DB::instance(DB_NAME)->delete('posts', $where_condition);
 
     # Pass data to the View
     $this->template->content->posts = $posts;
