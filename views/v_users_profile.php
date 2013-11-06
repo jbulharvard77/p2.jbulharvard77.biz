@@ -5,5 +5,5 @@ Email: <?=$user->email;?><br>
 
 </h2>
 
-<a href="/users/update/<?=$user_id['user_id']?>">Click here to update profile.</a>
+<a href="/users/update/<?=$user_id?>">Click here to update profile.</a>
 
