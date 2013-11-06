@@ -27,6 +27,9 @@
 	Password: <input type='password' name='password'>
 
 	<input type='Submit' value='Log in'>
+</div>
+
+<div id = "olduser2">
 
 	</form><br>
 
