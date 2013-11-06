@@ -45,6 +45,7 @@ class posts_controller extends base_controller {
     # Set up the View
     $this->template->content = View::instance('v_posts_index');
     $this->template->title   = "Posts";
+    $this->template->content->post_id = View::instance('v_posts_index');
 
     #CSS
     $this->template->client_files_head = '<link rel="stylesheet" href="/css/posts.css" type="text/css">';
