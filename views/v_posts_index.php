@@ -16,7 +16,7 @@
 </article>
 <br>
 
-	<form action="/posts/index/post_id">
+	<form action="/posts/delete/post_id">
 	<input type="hidden" name="post_id" value="<?$post['post_id']?>">
 	<input type="submit" value="delete">
 
