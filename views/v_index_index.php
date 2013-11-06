@@ -18,8 +18,8 @@
 
 <div id = "olduser2">
 	Welcome to the Inane Banter blog.  If you are already a member please log in here.  Once in you can edit and update posts that you are following
-	<br>(I wanted to mention that I had a major computer issue the past few days where I lost my permissions.  I've been updating all code in github and testing it on the live server, which is not ideal.  I just wnated to let you know.  
-	I kknow it's not an excuse but it certainly contributed to me falling short of all the requirements.<br>
+	<br><br>(I wanted to mention that I had a major computer issue the past few days where I lost my permissions.  I've been updating all code in github and testing it on the live server, which is not ideal.  I just wanted to let you know.  
+	I know it's not an excuse but it certainly contributed to me falling short of all the requirements.<br><br>
 
 	<form method='POST' action='/users/p_login'>
 
