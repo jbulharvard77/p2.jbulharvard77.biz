@@ -4,3 +4,6 @@ Last Name: <?=$user->last_name;?><br>
 Email: <?=$user->email;?><br>
 
 </h2>
+
+<a href="/users/update">Click here to update profile.</a>
+
