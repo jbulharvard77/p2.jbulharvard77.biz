@@ -76,7 +76,7 @@ class posts_controller extends base_controller {
 
     }
     
-    public function delete()  {
+    public function delete($post_id)  {
 
     # Setup view
     $this->template->content = View::instance('v_posts_delete');
@@ -98,7 +98,7 @@ class posts_controller extends base_controller {
     }
 
 
-    public function p_delete($posts, $where_condition) {
+    public function p_delete($post_id) {
 
         $where_condition = 'WHERE post_id='.$post_id;
         $sql = 'DELETE FROM '.$posts.' '.$where_condition;
