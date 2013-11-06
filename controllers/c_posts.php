@@ -45,7 +45,6 @@ class posts_controller extends base_controller {
     # Set up the View
     $this->template->content = View::instance('v_posts_index');
     $this->template->title   = "Posts";
-    $this->template->content->post_id = View::instance('v_posts_index');
 
     #CSS
     $this->template->client_files_head = '<link rel="stylesheet" href="/css/posts.css" type="text/css">';
@@ -69,13 +68,9 @@ class posts_controller extends base_controller {
     # Run the query
     $posts = DB::instance(DB_NAME)->select_rows($q);
     
-    # Run delete posts query
-    $where_condition = 'WHERE post_id='.$post_id;
-    $post_id = DB::instance(DB_NAME)->delete('posts', $where_condition);
 
     # Pass data to the View
     $this->template->content->posts = $posts;
-    $this->template->content->post_id = $post_id;
 
     # Render the View
     echo $this->template;
