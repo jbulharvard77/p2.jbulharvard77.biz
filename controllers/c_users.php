@@ -29,7 +29,7 @@ class users_controller extends base_controller {
         Router::redirect('/users/profile');
     }
     
-    public function update_row($user_id) {
+    public function update_row() {
         
         #Set up the view
         $this->template->content = View::instance('v_users_update');
