@@ -25,6 +25,8 @@ class users_controller extends base_controller {
         $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
 
         DB::instance(DB_NAME)->insert_row('users', $_POST);
+        
+        Router::redirect('/user/profile/');
 
     }
     
