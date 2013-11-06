@@ -44,7 +44,7 @@ class users_controller extends base_controller {
     
     public function p_update($user_id)  {
         
-        DB::instance(DB_NAME)->update("users", $_POST, "WHERE user_id =" .$user_id['user_id'});
+        DB::instance(DB_NAME)->update("users", $_POST, "WHERE user_id =".$user_id);
         
     }
 
