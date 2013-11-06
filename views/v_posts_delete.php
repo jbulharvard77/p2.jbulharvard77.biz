@@ -1,7 +1,6 @@
-<form action="/posts/delete/<?=$posts?>" method="post">
-	Are you sure you want to delete?
-	<input type="submit" name="delete" value="delete"/>
-</form>
+<h3>Are you sure you want to delete this post?</h3>
+<br>
+<a href="/posts/p_delete/<?=$post_id?>"Yes</a>
+<a href="/posts/">No</a>
 
 
-print_r($posts)
