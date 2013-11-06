@@ -28,6 +28,18 @@ class users_controller extends base_controller {
 
         Router::redirect('/users/profile');
     }
+    
+    public function update() {
+        
+        #Set up the view
+        $this->template->content = View::instance('v_users_update');
+
+        #Render the view
+        echo $this->template;
+    }
+        
+        
+    }
 
     public function login() {
         
