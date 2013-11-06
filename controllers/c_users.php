@@ -36,7 +36,7 @@ class users_controller extends base_controller {
         $this->template->title   = "Update Profile";
         
         #Pass to the view
-        $this->template->content->users->user_id = $user_id;
+        $this->template->content->user_id = $user_id;
 
         #Render the view
         echo $this->template;
