@@ -1,4 +1,5 @@
-<h2>Log in</h2>
+<div id="olduser2">
+"<h2>Log in</h2>
 
 <form method='POST' action='/users/p_login'>
 
@@ -7,5 +8,6 @@
 
 	<input type='Submit' value='Log in'>
 
+</div>
 
 </form>
