@@ -101,10 +101,9 @@ class posts_controller extends base_controller {
 
     public function p_delete($post_id) {
 
-        $where_condition = 'WHERE post_id='.$post_id;
-        $sql = 'DELETE FROM '.$posts.' '.$where_condition;
+        $sql = 'WHERE post_id='.$post_id;
+        DB::instance(DB_NAME)->delete('posts', $sql);
 
-        return $this->query($sql);
     
     }
 
