@@ -26,7 +26,7 @@ class users_controller extends base_controller {
 
         $log = DB::instance(DB_NAME)->insert_row('users', $_POST);
 
-        if ($log != NULL)    {
+        if ($log !== NULL)    {
             Router::redirect('/users/profile');
         }
     }
