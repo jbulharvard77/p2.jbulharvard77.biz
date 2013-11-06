@@ -26,9 +26,6 @@ class users_controller extends base_controller {
 
         DB::instance(DB_NAME)->insert_row('users', $_POST);
 
-        if ($_POST !== NULL)    {
-            Router::redirect('/users/profile');
-        }
     }
     
     public function update_row() {
