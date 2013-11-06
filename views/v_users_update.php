@@ -1,6 +1,6 @@
 <h2>Update Profile</h2>
 <div id = "olduser2">
-<form method='POST' action='/users/p_update/<?=$user_id['user_id']?>'>
+<form method='POST' action='/users/p_update/<?=$user_id?>'>
         
         First Name: <input type='text' name='first_name'>
                 value='<?php if(isset($_POST['first_name'])) echo $_POST['first_name']?>'><br>
