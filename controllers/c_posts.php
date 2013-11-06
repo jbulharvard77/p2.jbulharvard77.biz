@@ -87,9 +87,9 @@ class posts_controller extends base_controller {
         FROM posts
         WHERE post_id ='.$this->post->post_id;
     
-    $posts= DB::instance(DB_NAME)->select_rows($q);
+    $post_id= DB::instance(DB_NAME)->select_rows($q);
 
-    $this->template->content->posts = $posts;
+    $this->template->content->post_id = $post_id;
 
 
     # Render template
