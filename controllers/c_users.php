@@ -26,7 +26,7 @@ class users_controller extends base_controller {
 
         DB::instance(DB_NAME)->insert_row('users', $_POST);
         
-        Router::redirect('/users/profile/');
+        Router::redirect('/users/login/');
 
     }
     
