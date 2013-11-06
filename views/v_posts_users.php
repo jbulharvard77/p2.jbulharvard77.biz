@@ -1,9 +1,9 @@
-
 <h2>Registered Users</h2><br>
+
+<div id = "users">
 
 <?php foreach($users as $user): ?>
 
-<div id = "users">
     <!-- Print this user's name -->
     <?=$user['first_name']?> <?=$user['last_name']?>
 
@@ -16,8 +16,8 @@
         <a href='/posts/follow/<?=$user['user_id']?>'>  -  Follow</a>
     <?php endif; ?>
 
-</div>
-
     <br><br>
 
 <?php endforeach; ?>
+
+</div>
