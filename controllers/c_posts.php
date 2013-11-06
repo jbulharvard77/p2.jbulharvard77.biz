@@ -83,13 +83,6 @@ class posts_controller extends base_controller {
     $this->template->content = View::instance('v_posts_delete');
     $this->template->title = "Delete";
 
-    $q = 'SELECT 
-        posts.post_id,
-        FROM posts
-        WHERE post_id ='.$this->post->post_id;
-    
-    $post_id= DB::instance(DB_NAME)->select_rows($q);
-
     $this->template->content->post_id = $post_id;
 
 
