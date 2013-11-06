@@ -1,4 +1,5 @@
 <h2>Sign up</h2>
+<br><p>(Please fill out all fields)</p>
 <div id = "olduser2">
 <form method='POST' action='/users/p_signup'>
 	
