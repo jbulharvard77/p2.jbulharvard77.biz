@@ -29,21 +29,22 @@ class users_controller extends base_controller {
         Router::redirect('/users/profile');
     }
     
-    public function update($user_id) {
+    public function update_row($user_id) {
         
         #Set up the view
         $this->template->content = View::instance('v_users_update');
         $this->template->title   = "Update Profile";
         
         #Pass to the view
-        $this->template->content->user_id = $user_id;
+        $this->template->content->users->user_id = $user_id;
 
         #Render the view
         echo $this->template;
     }
     
-    public function p_update()  {
+    public function p_update($user_id)  {
         
+        DB::instance(DB_NAME)->update("users", $_POST, "WHERE user_id =" .$user_id['user_id'});
         
     }
 
