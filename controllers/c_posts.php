@@ -8,7 +8,7 @@ class posts_controller extends base_controller {
         # Make sure user is logged in if they want to use anything in this controller
         if(!$this->user) {
             
-             Router::redirect('/index/index/');
+             Router::redirect('/users/login/');
         }
     }
 
